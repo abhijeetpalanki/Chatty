@@ -3,7 +3,7 @@ export default function Head() {
     <>
       <title>Chatty</title>
       <meta content="width=device-width,initial-scale=1" name="viewport" />
-      <link rel="icon" href="/logo.png" />
+      <link rel="icon" href="/logo.jpg" />
     </>
   );
 }
