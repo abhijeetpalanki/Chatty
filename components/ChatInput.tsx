@@ -14,7 +14,7 @@ type Props = {
 function ChatInput({ chatId }: Props) {
   const { data: session } = useSession();
   const [prompt, setPrompt] = useState("");
-  const model = "davinci";
+  const model = "gpt-3.5-turbo";
 
   const sendMessage = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -50,7 +50,7 @@ function ChatInput({ chatId }: Props) {
 
     const notification = toast.loading("Chatty is thinking...");
 
-    await fetch("api/askQuestion", {
+    await fetch("/api/askQuestion", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -62,7 +62,7 @@ function ChatInput({ chatId }: Props) {
         session,
       }),
     }).then(() => {
-      toast.loading("Chatty has responded!", {
+      toast.success("Chatty has responded!", {
         id: notification,
       });
     });
@@ -88,8 +88,6 @@ function ChatInput({ chatId }: Props) {
           <PaperAirplaneIcon className="h-4 w-4 -rotate-45" />
         </button>
       </form>
-
-      <div></div>
     </div>
   );
 }
