@@ -44,6 +44,7 @@ function Sidebar() {
           alt="Profile Pic"
           referrerPolicy="no-referrer"
           className="h-12 w-12 rounded-full cursor-pointer mx-auto mb-2 hover:opacity-50"
+          title="Logout"
         />
       )}
     </div>
